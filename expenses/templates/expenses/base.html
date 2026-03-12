@@ -1,0 +1,20 @@
+{% extends "expenses/basetemplate.html" %}
+{% block content %}
+<div class="text-center pt-5">
+    <h1 class="text-6xl bg-gradient-to-r from-red-500 via-yellow-400 via-green-500 via-blue-500 via-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text italic">ExpenseStream</h1>
+    <p class="text-white pl-60 italic">Your financial assistant</p>
+    <div class="w-[25rem] h-80 backdrop-blur-lg rounded-2xl mt-[6rem] lg:w-[40rem] md:w-[28rem] text-center pt-5 border-2 border-indigo-400">
+    <h1 class="italic text-white text-5xl">Track Your Expenses</h1>
+    <hr class="w-60 bg-indigo-400 ml-20 mt-3 md:w-80 md:ml-[4rem] lg:ml-40"/>
+    <h4 class="text-xl mt-5 mb-5 md:mt-10 lg:mt-10 bg-gradient-to-r from-red-500 via-yellow-400 via-green-500 via-blue-500 via-indigo-500 via-purple-500 to-pink-500 ">Master Your Money, Master your life</h4>
+    <h3 class="text-sm text-white mb-6 md:mt-10 lg:mt-10">Already a user? Login or create account by Sign up!</h3>
+    
+    <div class="flex justify-evenly">
+        <a href="{%url 'login'%}"><button type="button" class="bg-green-700 rounded-2xl w-[8rem] h-10 text-2xl text-white font-bold hover:bg-green-600 border-2 border-indigo-400">Login</button></a>
+        <a href="{%url 'sign_up'%}"><button type="button" class="bg-green-700 rounded-2xl w-[8rem] h-10 text-2xl text-white font-bold hover:bg-green-600 border-2 border-indigo-400">Sign up
+            
+        </button></a>
+    </div>
+</div>
+</div>
+{%endblock%}

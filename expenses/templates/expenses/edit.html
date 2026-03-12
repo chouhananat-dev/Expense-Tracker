@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-screen h-screen bg-[url('{%static 'expenses/images/bck.jpg'%}')] bg-cover bg-center bg-no-repeat">
+        <div>
+        <nav class="text-white text-lg flex justify-between ml-3 mr-3 pt-2 pb-2 backdrop-blur-lg lg:pl-10 lg:pr-10">
+            <strong class="text-3xl text-blue-400">Welcome! {{user.username}}</strong>
+            <a href="{% url 'expense_list' %}" class="underline">Your Expenses</a>
+            <form action="{% url 'logout' %}" method="POST" style="display: inline-block;">
+                {%csrf_token%}
+                <button type="submit" class="underline">Logout</button>
+            </form>
+        </nav>
+        </div>
+        <div class="w-[28rem] backdrop-blur-md rounded-2xl lg:w-[50rem] mt-[6rem] md:w-[35rem] text-center pt-5 border-2 border-indigo-400 ml-auto mr-auto">
+        <h2 class= "text-4xl text-white font-bold">Update Expense</h2>
+        <form method="POST" class="p-5 space-y-10 text-lg text-black">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="flex flex-rows items-center justify-evenly">
+                <label class="text-xl text-white">{{field.label}}</label>
+                {{field}}
+                
+            </div>
+            {% if field.errors %}
+                <p class= "text-red-500 text-xl">!{{field.errors.0}}</p>
+                {% endif %}
+            {% endfor %}
+            <button type="submit" class="bg-green-700 rounded-2xl w-[8rem] h-10 text-white hover:bg-green-600 border-2 border-indigo-400 mt-3">Update</button>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
