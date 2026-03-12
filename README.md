@@ -22,7 +22,6 @@ A full-stack Django application designed to help users track their daily expense
 ## 📦 Installation & Setup
 
 1. **Clone the repository:**
-   ```bash
 git clone [https://github.com/chouhananat-dev/Expense-Tracker.git](https://github.com/chouhananat-dev/Expense-Tracker.git)
 cd Expense-Tracker
 
